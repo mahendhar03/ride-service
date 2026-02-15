@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ride-service
+  labels:
+    app: ride-service
+spec:
+  selector:
+    matchLabels:
+      app: ride-service
+  template:
+    spec:
+      containers:
+        - name: ride-service
+          image: mahetech/ride-service:2.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8082
